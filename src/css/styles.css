@@ -6,7 +6,7 @@
 */
 @import url('./reset.css');
 @import url( "izitoast/dist/css/iziToast.min.css");
-@import url('./1-timer.css')
+@import url('./1-timer.css');
 
 /* :root {
   font-family: Montserrat, sans-serif;
@@ -23,3 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 } */
+
+a:hover {
+  color: #4E75FF;
+}

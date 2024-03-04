@@ -1,7 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from "izitoast";
-// import  "izitoast/dist/css/iziToast.min.css";
 
 const button = document.querySelector('button');
 button.addEventListener("click", clickHandler)
@@ -37,15 +36,6 @@ const options = {
           position:'topRight',
           messageSize:'16',
           messageLineHeight:'24',
-          // close:false,
-        //   buttons:[ ['<button><svg width="16" height="16">./img/cross.svg</svg></button>', function (instance, toast) {
- 
-        //     instance.hide({ transitionOut: 'fadeOut'}, toast, 'button');
- 
-        // }, true],]
-
-        
-          
       })}
   },
 };
@@ -62,28 +52,21 @@ function clickHandler(){
   datetimePicker.disabled = true;
  
   const intervalId = setInterval(()=>{
-  console.log("Here is ms in click:", ms);
   ms = userSelectedDate.getTime() - Date.now()
   convertMs(ms)
   const { days, hours, minutes, seconds } = convertMs(ms)
-  timeValuesArray[0].textContent = days;
-  timeValuesArray[1].textContent = hours;
-  timeValuesArray[2].textContent = minutes;
-  timeValuesArray[3].textContent = seconds;
+  timeValuesArray[0].textContent = addLeadingZero(days);
+  timeValuesArray[1].textContent = addLeadingZero(hours);
+  timeValuesArray[2].textContent = addLeadingZero(minutes);
+  timeValuesArray[3].textContent = addLeadingZero(seconds);
   if (ms<1000){
     clearInterval(intervalId)
     datetimePicker.disabled = false;
   }
+  datetimePicker.classList.add('input-change')
 }, 1000, ms);
   
-
-  
-  // const days =userSelectedDate.getDate()
-  // console.log("Here is Day:", days)
 }
-// console.log(timeValuesArray)
-// console.log(userSelectedDate)
-// timeValuesArray[0].textContent = "test"}
 
 
 function convertMs(ms) {
@@ -105,9 +88,12 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-// Add notification
-// add styles
 
 function inputHandler (event) {
   event.target.classList.add('input-change')
 }
+
+function addLeadingZero(value){
+  return value.toString().padStart(2, "0")
+}
+
