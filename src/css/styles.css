@@ -5,15 +5,16 @@
   |============================
 */
 @import url('./reset.css');
+@import url( "izitoast/dist/css/iziToast.min.css");
+@import url('./1-timer.css')
 
-
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+/* :root {
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  color: #242424;
+  color: #ebeaea;
   background-color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
@@ -21,4 +22,4 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
+} */

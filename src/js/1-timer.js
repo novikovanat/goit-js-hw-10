@@ -1,5 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import iziToast from "izitoast";
+// import  "izitoast/dist/css/iziToast.min.css";
 
 const button = document.querySelector('button');
 button.addEventListener("click", clickHandler)
@@ -15,14 +17,43 @@ const options = {
   onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
     ms = userSelectedDate.getTime() - Date.now();
-    ms>0
-      ? (button.disabled = false)
-      : (button.disabled = true);
+    if(ms>1000) {
+      button.disabled = false
+      }
+    else
+       { button.disabled = true;
+        iziToast.error({
+          timeout:'5000',
+          messageColor:'#ffffff',
+          title:'Error',
+          titleColor:"#fff",
+          titleSize:"16",
+          titleLineHeight:'24',
+          message: 'Please choose a date in the future',
+          iconUrl: './img/error.svg',
+          iconColor:'#fff',
+          backgroundColor:'#EF4040',
+          progressBarColor:"#B51B1B",
+          position:'topRight',
+          messageSize:'16',
+          messageLineHeight:'24',
+          // close:false,
+        //   buttons:[ ['<button><svg width="16" height="16">./img/cross.svg</svg></button>', function (instance, toast) {
+ 
+        //     instance.hide({ transitionOut: 'fadeOut'}, toast, 'button');
+ 
+        // }, true],]
+
+        
+          
+      })}
   },
 };
 
 const datetimePicker = document.getElementById('datetime-picker');
 flatpickr(datetimePicker, options);
+
+datetimePicker.addEventListener("input" , inputHandler)
 
 const timeValuesArray = document.getElementsByClassName('value')
 
@@ -76,3 +107,7 @@ function convertMs(ms) {
 
 // Add notification
 // add styles
+
+function inputHandler (event) {
+  event.target.classList.add('input-change')
+}
