@@ -1,5 +1,7 @@
 
 import iziToast from "izitoast";
+import errorSvg from '../img/error.svg'
+import sucsessSvg from '../img/bi_check2-circle.svg'
 
 const form = document.querySelector('.form')
 const buttonSubmit = document.querySelector('button')
@@ -40,7 +42,7 @@ const promise = new Promise((resolve, reject) => {
           titleColor:"#fff",
           titleSize:"16",
           titleLineHeight:'24',
-          iconUrl: './img/bi_check2-circle.svg',
+          iconUrl: sucsessSvg,
           iconColor:'#fff',
           backgroundColor:'#59A10D',
           progressBarColor:"#326101",
@@ -59,7 +61,7 @@ const promise = new Promise((resolve, reject) => {
             titleSize:"16",
             titleLineHeight:'24',
             message: error,
-            iconUrl: './img/error.svg',
+            iconUrl: errorSvg,
             iconColor:'#fff',
             backgroundColor:'#EF4040',
             progressBarColor:"#B51B1B",
