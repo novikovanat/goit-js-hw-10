@@ -1,6 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from "izitoast";
+import errorSvg from '../img/error.svg'
 
 const button = document.querySelector('button');
 button.addEventListener("click", clickHandler)
@@ -29,7 +30,7 @@ const options = {
           titleSize:"16",
           titleLineHeight:'24',
           message: 'Please choose a date in the future',
-          iconUrl: '/img/error.svg',
+          iconUrl: errorSvg,
           iconColor:'#fff',
           backgroundColor:'#EF4040',
           progressBarColor:"#B51B1B",
