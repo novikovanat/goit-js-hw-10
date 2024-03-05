@@ -29,7 +29,7 @@ const options = {
           titleSize:"16",
           titleLineHeight:'24',
           message: 'Please choose a date in the future',
-          iconUrl: './img/error.svg',
+          iconUrl: '../img/error.svg',
           iconColor:'#fff',
           backgroundColor:'#EF4040',
           progressBarColor:"#B51B1B",
