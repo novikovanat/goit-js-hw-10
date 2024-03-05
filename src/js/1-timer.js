@@ -63,7 +63,7 @@ function clickHandler(){
     clearInterval(intervalId)
     datetimePicker.disabled = false;
   }
-  datetimePicker.classList.add('input-change')
+  datetimePicker.classList.remove('input-change')
 }, 1000, ms);
   
 }
