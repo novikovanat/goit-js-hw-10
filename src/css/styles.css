@@ -7,6 +7,7 @@
 @import url('./reset.css');
 @import url( "izitoast/dist/css/iziToast.min.css");
 @import url('./1-timer.css');
+@import url('./2-snackbar.css');
 
 /* :root {
   font-family: Montserrat, sans-serif;
