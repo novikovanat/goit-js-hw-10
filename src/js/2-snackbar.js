@@ -11,9 +11,9 @@ form.addEventListener('submit', submitHandler)
 let delay;
 let promiseFinalStatus
 function changeHandler(event){
+  console.log(event.currentTarget.delay.classList.contains('input-change'))
   delay = event.currentTarget.delay.value
   promiseFinalStatus=event.currentTarget.state.value
-  console.log("Promise import:", promiseImport)
   }
 
 
